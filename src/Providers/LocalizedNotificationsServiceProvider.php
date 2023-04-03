@@ -12,7 +12,8 @@ class LocalizedNotificationsServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
 
         $this->publishes([
-            __DIR__ . '/stubs' => database_path('seeders'),
+            __DIR__ . '/stubs/MessageContentTableSeeder.stub' =>
+                database_path('seeders/MessageContentTableSeeder.php'),
         ], 'seeders');
 
         $this->commands([
