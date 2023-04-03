@@ -16,6 +16,5 @@
         "php": "^8.0",
         "ext-json": "*",
         "laravel/framework": "^10"
-    },
-    "minimum-stability": "dev"
+    }
 }
