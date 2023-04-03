@@ -13,7 +13,7 @@ class LocalizedNotificationServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../../database/seeders/MessageContentTableSeeder.stub' =>
                     database_path('seeders/MessageContentTableSeeder.php'),
-            ], 'ln-seeders');
+            ], 'seeders');
 
             $this->publishes([
                 __DIR__ . '/../../database/migrations/create_message_contents_table.stub' =>
@@ -22,12 +22,12 @@ class LocalizedNotificationServiceProvider extends ServiceProvider
                         . now()->format('Y_m_d_u')
                         . '_create_message_contents_table.php',
                     ),
-            ], 'ln-migrations');
+            ], 'migrations');
 
             $this->publishes([
                 __DIR__ . '/../../config/ln.php' =>
                     config_path('ln.php'),
-            ], 'ln-config');
+            ], 'config');
         }
 
         $this->mergeConfigFrom(__DIR__ . '/../../config/ln.php', 'ln');
