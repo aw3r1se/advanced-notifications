@@ -17,6 +17,13 @@
         "ext-json": "*",
         "laravel/framework": "^10"
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aw3r1se\\LocalizedNotifications\\LocalizedNotificationServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
