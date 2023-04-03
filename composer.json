@@ -11,5 +11,9 @@
             "name": "Bogdan"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*",
+        "laravel/framework": "^10"
+    }
 }
