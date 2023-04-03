@@ -16,5 +16,5 @@
         "ext-json": "*",
         "laravel/framework": "^10"
     }
-    "minimum-stability": "master",
+    "minimum-stability": "dev-master",
 }
