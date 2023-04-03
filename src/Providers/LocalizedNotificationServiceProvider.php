@@ -2,7 +2,7 @@
 
 namespace Aw3r1se\LocalizedNotifications\Providers;
 
-use Aw3r1se\LocalizedNotifications\Console\MakeLocalizedNotification;
+use Aw3r1se\LocalizedNotifications\Console\Commands\MakeLocalizedNotification;
 use Illuminate\Support\ServiceProvider;
 
 class LocalizedNotificationServiceProvider extends ServiceProvider
@@ -16,14 +16,21 @@ class LocalizedNotificationServiceProvider extends ServiceProvider
             ], 'ln-seeders');
 
             $this->publishes([
-                __DIR__ . '/../../database/migrations/create_message_contents_table.stub'
-                => database_path(
-                    'migrations/'
-                    . now()->format('Y_m_d_u')
-                    . '_create_message_contents_table.php'
-                ),
+                __DIR__ . '/../../database/migrations/create_message_contents_table.stub' =>
+                    database_path(
+                        'migrations/'
+                        . now()->format('Y_m_d_u')
+                        . '_create_message_contents_table.php',
+                    ),
             ], 'ln-migrations');
+
+            $this->publishes([
+                __DIR__ . '/../../config/ln.php' =>
+                    config_path('ln.php'),
+            ], 'ln-config');
         }
+
+        $this->mergeConfigFrom(__DIR__ . '/../../config/ln.php', 'ln');
 
         $this->commands([
             MakeLocalizedNotification::class,
