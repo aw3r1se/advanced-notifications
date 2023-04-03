@@ -19,7 +19,7 @@ class LocalizedNotificationServiceProvider extends ServiceProvider
                 __DIR__ . '/../../database/migrations/create_message_contents_table.php'
                 => database_path(
                     'migrations/'
-                    . now()->format('y_m_d_ms')
+                    . now()->format('Y_m_d_u')
                     . '_create_message_contents_table.php'
                 ),
             ], 'ln-migrations');
