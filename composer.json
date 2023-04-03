@@ -20,7 +20,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Aw3r1se\\LocalizedNotifications\\LocalizedNotificationServiceProvider"
+                "Aw3r1se\\LocalizedNotifications\\Providers\\LocalizedNotificationServiceProvider"
             ]
         }
     },
