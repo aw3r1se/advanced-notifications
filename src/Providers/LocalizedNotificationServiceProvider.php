@@ -16,7 +16,7 @@ class LocalizedNotificationServiceProvider extends ServiceProvider
             ], 'ln-seeders');
 
             $this->publishes([
-                __DIR__ . '../../database/migrations/create_message_contents_table.php'
+                __DIR__ . '/../../database/migrations/create_message_contents_table.php'
                 => database_path(
                     'migrations/'
                     . now()->format('y_m_d_ms')
