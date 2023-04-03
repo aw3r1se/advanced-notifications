@@ -9,12 +9,14 @@ class LocalizedNotificationServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/stubs/MessageContentTableSeeder.stub' =>
+                    database_path('seeders/MessageContentTableSeeder.php'),
+            ], 'seeders');
+        }
 
-        $this->publishes([
-            __DIR__ . '/stubs/MessageContentTableSeeder.stub' =>
-                database_path('seeders/MessageContentTableSeeder.php'),
-        ], 'seeders');
+        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
 
         $this->commands([
             MakeLocalizedNotification::class,
