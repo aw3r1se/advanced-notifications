@@ -1,0 +1,15 @@
+{
+    "name": "aw3r1se/localized-notifications",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Aw3r1se\\LocalizedNotifications\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bogdan"
+        }
+    ],
+    "require": {}
+}
