@@ -11,12 +11,12 @@ class LocalizedNotificationServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/stubs/MessageContentTableSeeder.stub' =>
+                __DIR__ . '/../../database/seeders/MessageContentTableSeeder.stub' =>
                     database_path('seeders/MessageContentTableSeeder.php'),
             ], 'ln-seeders');
 
             $this->publishes([
-                __DIR__ . '/../../database/migrations/create_message_contents_table.php'
+                __DIR__ . '/../../database/migrations/create_message_contents_table.stub'
                 => database_path(
                     'migrations/'
                     . now()->format('Y_m_d_u')
