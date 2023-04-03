@@ -5,7 +5,7 @@ namespace Aw3r1se\LocalizedNotifications\Providers;
 use Aw3r1se\LocalizedNotifications\Console\MakeLocalizedNotification;
 use Illuminate\Support\ServiceProvider;
 
-class LocalizedNotificationsServiceProvider extends ServiceProvider
+class LocalizedNotificationServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
