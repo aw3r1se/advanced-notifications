@@ -3,11 +3,11 @@
 namespace Aw3r1se\LocalizedNotifications\Enums;
 
 use Aw3r1se\LocalizedNotifications\Enums\Contracts\ContentTypeEnumInterface;
-use Aw3r1se\LocalizedNotifications\Enums\Traits\HasName;
+use Aw3r1se\LocalizedNotifications\Enums\Traits\HasNameTrait;
 
 enum ContentTypeEnum implements ContentTypeEnumInterface
 {
-    use HasName;
+    use HasNameTrait;
 
     case TITLE;
     case SUBJECT;

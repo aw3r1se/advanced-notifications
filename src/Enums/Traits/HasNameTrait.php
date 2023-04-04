@@ -2,7 +2,7 @@
 
 namespace Aw3r1se\LocalizedNotifications\Enums\Traits;
 
-trait HasName
+trait HasNameTrait
 {
     /**
      * @return string

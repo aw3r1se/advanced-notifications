@@ -34,13 +34,24 @@ abstract class Message
     }
 
     /**
-     * @param LocaleEnumInterface|null $locale
+     * @param LocaleEnumInterface $locale
+     * @return array
+     */
+    public function translate(LocaleEnumInterface $locale): array
+    {
+        return [
+
+        ];
+    }
+
+    /**
      * @param ContentTypeEnumInterface|null $type
+     * @param LocaleEnumInterface|null $locale
      * @return MessageContent
      */
     public static function getContent(
-        ?LocaleEnumInterface $locale = null,
         ?ContentTypeEnumInterface $type = null,
+        ?LocaleEnumInterface $locale = null,
     ): MessageContent {
         return MessageContent::query()
             ->where('name', static::$name)
@@ -48,5 +59,23 @@ abstract class Message
             ->when($type, function (Builder $builder) use ($type) {
                 $builder->where('type', $type->name());
             })->firstOrFail();
+    }
+
+    /**
+     * @param LocaleEnumInterface|null $filter_by_locale
+     * @param ContentTypeEnumInterface|null $filter_by_type
+     * @return Collection
+     */
+    public static function getAllContents(
+        ?LocaleEnumInterface $filter_by_locale = null,
+        ?ContentTypeEnumInterface $filter_by_type = null,
+    ): Collection {
+        return MessageContent::query()
+            ->when($filter_by_locale, function (Builder $builder) use ($filter_by_locale) {
+                $builder->where('locale', $filter_by_locale->name());
+            })
+            ->when($filter_by_type, function (Builder $builder) use ($filter_by_type) {
+                $builder->where('type', $filter_by_type->name());
+            })->get();
     }
 }
