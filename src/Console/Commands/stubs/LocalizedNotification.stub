@@ -1,0 +1,29 @@
+<?php
+
+namespace NamespaceStub;
+
+use Aw3r1se\LocalizedNotifications\Classes\LocalizedNotification;
+use Illuminate\Bus\Queueable;
+
+class LocalizedNotificationStub extends LocalizedNotification
+{
+    use Queueable;
+
+    /**
+     * Create a new notification instance.
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * Get the notification's delivery channels.
+     *
+     * @return array<int, string>
+     */
+    public function via(object $notifiable): array
+    {
+        return [];
+    }
+}

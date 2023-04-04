@@ -8,6 +8,6 @@ class MakeLocalizedNotification extends BaseCommand
 
     public function handle()
     {
-
+        $this->make('LocalizedNotification');
     }
 }
