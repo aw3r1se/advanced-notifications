@@ -33,5 +33,8 @@ abstract class LocalizedNotification extends Notification
         return $this;
     }
 
-    //
+    public function getContent()
+    {
+        //$this->message::getContents();
+    }
 }

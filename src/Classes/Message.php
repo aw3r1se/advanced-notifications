@@ -2,7 +2,11 @@
 
 namespace Aw3r1se\LocalizedNotifications\Classes;
 
+use Aw3r1se\LocalizedNotifications\Enums\Contracts\ContentTypeEnumInterface;
+use Aw3r1se\LocalizedNotifications\Enums\Contracts\LocaleEnumInterface;
 use Aw3r1se\LocalizedNotifications\Models\MessageContent;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 
 abstract class Message
 {
@@ -22,14 +26,27 @@ abstract class Message
     }
 
     /**
-     * @param string $locale
-     * @return string
+     * @return array|string[]
      */
-    public static function getContent(string $locale): string
+    public function getVariables(): array
     {
+        return static::$variables;
+    }
+
+    /**
+     * @param LocaleEnumInterface|null $locale
+     * @param ContentTypeEnumInterface|null $type
+     * @return MessageContent
+     */
+    public static function getContent(
+        ?LocaleEnumInterface $locale = null,
+        ?ContentTypeEnumInterface $type = null,
+    ): MessageContent {
         return MessageContent::query()
             ->where('name', static::$name)
-            ->where('locale', $locale)
-            ->firstOrFail();
+            ->where('locale', ($locale ?? config('ln.locale'))->name())
+            ->when($type, function (Builder $builder) use ($type) {
+                $builder->where('type', $type->name());
+            })->firstOrFail();
     }
 }
