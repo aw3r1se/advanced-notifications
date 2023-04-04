@@ -11,9 +11,15 @@ class MessageContentTableSeeder extends Seeder
 {
     /**
      * Seed the application's database.
+     * @throws IncorrectMessageException
      */
     public function run(): void
     {
-        //MessageContent::create(ExampleMessage::class, LocaleEnum::EN, 'Hello!');
+        MessageContent::create(
+            ExampleMessage::class,
+            ContentTypeEnum::TEXT,
+            LocaleEnum::EN,
+            '<h1>Hello!</h1>',
+        );
     }
 }

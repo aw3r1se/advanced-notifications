@@ -5,10 +5,18 @@ namespace Aw3r1se\LocalizedNotifications\Providers;
 use Aw3r1se\LocalizedNotifications\Console\Commands\MakeLocalizedNotification;
 use Aw3r1se\LocalizedNotifications\Console\Commands\MakeMessage;
 use Aw3r1se\LocalizedNotifications\Console\Commands\MakeVariable;
+use Aw3r1se\LocalizedNotifications\Enums\ContentTypeEnum;
+use Aw3r1se\LocalizedNotifications\Enums\Contracts\ContentTypeEnumInterface;
+use Aw3r1se\LocalizedNotifications\Enums\Contracts\LocaleEnumInterface;
 use Illuminate\Support\ServiceProvider;
 
 class LocalizedNotificationServiceProvider extends ServiceProvider
 {
+    public array $bindings = [
+        ContentTypeEnumInterface::class => ContentTypeEnum::class,
+        LocaleEnumInterface::class => LocaleEnumInterface::class,
+    ];
+
     public function boot(): void
     {
         if ($this->app->runningInConsole()) {
