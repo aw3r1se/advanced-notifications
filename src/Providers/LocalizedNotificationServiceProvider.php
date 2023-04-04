@@ -3,6 +3,8 @@
 namespace Aw3r1se\LocalizedNotifications\Providers;
 
 use Aw3r1se\LocalizedNotifications\Console\Commands\MakeLocalizedNotification;
+use Aw3r1se\LocalizedNotifications\Console\Commands\MakeMessage;
+use Aw3r1se\LocalizedNotifications\Console\Commands\MakeVariable;
 use Illuminate\Support\ServiceProvider;
 
 class LocalizedNotificationServiceProvider extends ServiceProvider
@@ -33,6 +35,8 @@ class LocalizedNotificationServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../../config/ln.php', 'ln');
 
         $this->commands([
+            MakeMessage::class,
+            MakeVariable::class,
             MakeLocalizedNotification::class,
         ]);
     }

@@ -1,0 +1,12 @@
+<?php
+
+namespace NamespaceStub;
+
+use Aw3r1se\LocalizedNotifications\Classes\Message;
+
+class MessageStub extends Message
+{
+    protected static string $name;
+
+    protected static array $variables = [];
+}

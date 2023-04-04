@@ -1,0 +1,14 @@
+<?php
+
+namespace NamespaceStub;
+
+use Aw3r1se\LocalizedNotifications\Classes\Variable;
+
+class VariableStub extends Variable
+{
+    protected static string $name;
+
+    protected static string $model;
+
+    protected static string $field;
+}
