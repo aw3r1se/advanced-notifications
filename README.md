@@ -4,4 +4,4 @@
 
 ### Публикация миграции из вендора
 <code>php artisan vendor:publish --provider="Aw3r1se\LocalizedNotifications\Providers\LocalizedNotificationServiceProvider" --tag=migrations</code>
-#### Также для публикации доступны теги <code>seeders</code> и <code>config</config>
+#### Также для публикации доступны теги <code>seeders</code> и <code>config</code>
