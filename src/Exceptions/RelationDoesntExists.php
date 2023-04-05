@@ -5,8 +5,8 @@ namespace Aw3r1se\LocalizedNotifications\Exceptions;
 use Exception;
 use Throwable;
 
-class IncorrectEntityProvided extends Exception implements Throwable
+class RelationDoesntExists extends Exception implements Throwable
 {
     protected $code = 422;
-    protected $message = 'Incorrect entity provided';
+    protected $message = "Relation doesn't exists";
 }
