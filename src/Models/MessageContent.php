@@ -3,6 +3,7 @@
 namespace Aw3r1se\LocalizedNotifications\Models;
 
 use Aw3r1se\LocalizedNotifications\Classes\Message;
+use Aw3r1se\LocalizedNotifications\Classes\Variable;
 use Aw3r1se\LocalizedNotifications\Enums\ContentTypeEnum;
 use Aw3r1se\LocalizedNotifications\Enums\Contracts\ContentTypeEnumInterface;
 use Aw3r1se\LocalizedNotifications\Enums\Contracts\LocaleEnumInterface;
@@ -54,5 +55,23 @@ class MessageContent extends Model
         $message_content->save();
 
         return $message_content;
+    }
+
+    /**
+     * @param array<Variable> $variables
+     * @return $this
+     */
+    public function replaceVariables(array $variables): static
+    {
+        foreach ($variables as $variable) {
+            $name = $variable::getName();
+            $this->content = preg_replace(
+                "#\\$name#u",
+                $variable->getValue(),
+                $this->content,
+            );
+        }
+
+        return $this;
     }
 }

@@ -1,20 +1,25 @@
 <?php
 
-namespace NamespaceStub;
+namespace App\Notifications\Localized;
 
 use Aw3r1se\LocalizedNotifications\Classes\LocalizedNotification;
+use Aw3r1se\LocalizedNotifications\Enums\ContentTypeEnum;
+use Aw3r1se\LocalizedNotifications\Example\ExampleMessage;
+use Aw3r1se\LocalizedNotifications\Exceptions\IncorrectMessageException;
 use Illuminate\Bus\Queueable;
+use Illuminate\Notifications\Messages\MailMessage;
 
-class LocalizedNotificationStub extends LocalizedNotification
+class Test extends LocalizedNotification
 {
     use Queueable;
 
     /**
      * Create a new notification instance.
+     * @throws IncorrectMessageException
      */
     public function __construct()
     {
-        //
+        parent::__construct(ExampleMessage::class);
     }
 
     /**
@@ -24,6 +29,12 @@ class LocalizedNotificationStub extends LocalizedNotification
      */
     public function via(object $notifiable): array
     {
-        return [];
+        return ['mail'];
+    }
+
+    public function toMail(object $notifiable): MailMessage
+    {
+        return (new MailMessage())
+            ->line($this->getByType(ContentTypeEnum::TEXT));
     }
 }

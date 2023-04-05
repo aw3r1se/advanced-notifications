@@ -17,6 +17,13 @@ abstract class Message
      */
     protected static array $variables;
 
+    public function __construct()
+    {
+        foreach (static::$variables as &$variable) {
+            $variable = new $variable;
+        }
+    }
+
     /**
      * @return string
      */
@@ -26,7 +33,7 @@ abstract class Message
     }
 
     /**
-     * @return array|string[]
+     * @return array<Variable>
      */
     public function getVariables(): array
     {
@@ -35,13 +42,17 @@ abstract class Message
 
     /**
      * @param LocaleEnumInterface $locale
-     * @return array
+     * @return Collection
      */
-    public function translate(LocaleEnumInterface $locale): array
+    public function translate(LocaleEnumInterface $locale): Collection
     {
-        return [
+        $variables = $this->getVariables();
+        $contents = static::getAllContents($locale);
+        foreach ($contents as $content) {
+            $content->replaceVariables($variables);
+        }
 
-        ];
+        return $contents;
     }
 
     /**

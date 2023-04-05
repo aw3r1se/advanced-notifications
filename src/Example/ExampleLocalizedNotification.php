@@ -3,20 +3,20 @@
 namespace Aw3r1se\LocalizedNotifications\Example;
 
 use Aw3r1se\LocalizedNotifications\Classes\LocalizedNotification;
+use Aw3r1se\LocalizedNotifications\Exceptions\IncorrectMessageException;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Notifiable;
 
 class ExampleLocalizedNotification extends LocalizedNotification
 {
     use Queueable;
-    use Notifiable;
 
     /**
      * Create a new notification instance.
+     * @throws IncorrectMessageException
      */
     public function __construct()
     {
-        //
+        parent::__construct(ExampleMessage::class);
     }
 
     /**
@@ -26,11 +26,6 @@ class ExampleLocalizedNotification extends LocalizedNotification
      */
     public function via(object $notifiable): array
     {
-        return ['telegram'];
-    }
-
-    public function toTelegram(object $notifiable)
-    {
-
+        return ['mail'];
     }
 }
