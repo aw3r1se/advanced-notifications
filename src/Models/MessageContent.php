@@ -1,14 +1,14 @@
 <?php
 
-namespace Aw3r1se\LocalizedNotifications\Models;
+namespace Aw3r1se\AdvancedNotifications\Models;
 
-use Aw3r1se\LocalizedNotifications\Classes\Message;
-use Aw3r1se\LocalizedNotifications\Classes\Variable;
-use Aw3r1se\LocalizedNotifications\Enums\ContentTypeEnum;
-use Aw3r1se\LocalizedNotifications\Enums\Contracts\ContentTypeEnumInterface;
-use Aw3r1se\LocalizedNotifications\Enums\Contracts\LocaleEnumInterface;
-use Aw3r1se\LocalizedNotifications\Enums\LocaleEnum;
-use Aw3r1se\LocalizedNotifications\Exceptions\IncorrectMessageException;
+use Aw3r1se\AdvancedNotifications\Classes\Message;
+use Aw3r1se\AdvancedNotifications\Classes\Variable;
+use Aw3r1se\AdvancedNotifications\Enums\ContentTypeEnum;
+use Aw3r1se\AdvancedNotifications\Enums\Contracts\ContentTypeEnumInterface;
+use Aw3r1se\AdvancedNotifications\Enums\Contracts\LocaleEnumInterface;
+use Aw3r1se\AdvancedNotifications\Enums\LocaleEnum;
+use Aw3r1se\AdvancedNotifications\Exceptions\IncorrectMessageException;
 use Illuminate\Database\Eloquent\Model;
 
 /**

@@ -1,17 +1,13 @@
 <?php
 
-namespace Aw3r1se\LocalizedNotifications\Providers;
+namespace Aw3r1se\AdvancedNotifications\Providers;
 
-use Aw3r1se\LocalizedNotifications\Console\Commands\MakeLocalizedNotification;
-use Aw3r1se\LocalizedNotifications\Console\Commands\MakeMessage;
-use Aw3r1se\LocalizedNotifications\Console\Commands\MakeVariable;
-use Aw3r1se\LocalizedNotifications\Enums\ContentTypeEnum;
-use Aw3r1se\LocalizedNotifications\Enums\Contracts\ContentTypeEnumInterface;
-use Aw3r1se\LocalizedNotifications\Enums\Contracts\LocaleEnumInterface;
-use Aw3r1se\LocalizedNotifications\Enums\LocaleEnum;
+use Aw3r1se\AdvancedNotifications\Console\Commands\MakeAdvancedNotification;
+use Aw3r1se\AdvancedNotifications\Console\Commands\MakeMessage;
+use Aw3r1se\AdvancedNotifications\Console\Commands\MakeVariable;
 use Illuminate\Support\ServiceProvider;
 
-class LocalizedNotificationServiceProvider extends ServiceProvider
+class AdvancedNotificationServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
@@ -31,17 +27,17 @@ class LocalizedNotificationServiceProvider extends ServiceProvider
             ], 'migrations');
 
             $this->publishes([
-                __DIR__ . '/../../config/ln.php' =>
-                    config_path('ln.php'),
+                __DIR__ . '/../../config/an.php' =>
+                    config_path('an.php'),
             ], 'config');
         }
 
-        $this->mergeConfigFrom(__DIR__ . '/../../config/ln.php', 'ln');
+        $this->mergeConfigFrom(__DIR__ . '/../../config/an.php', 'an');
 
         $this->commands([
             MakeMessage::class,
             MakeVariable::class,
-            MakeLocalizedNotification::class,
+            MakeAdvancedNotification::class,
         ]);
     }
 }

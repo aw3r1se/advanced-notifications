@@ -1,12 +1,12 @@
 <?php
 
-namespace Aw3r1se\LocalizedNotifications\Example;
+namespace Aw3r1se\AdvancedNotifications\Example;
 
-use Aw3r1se\LocalizedNotifications\Classes\LocalizedNotification;
-use Aw3r1se\LocalizedNotifications\Exceptions\IncorrectMessageException;
+use Aw3r1se\AdvancedNotifications\Classes\AdvancedNotification;
+use Aw3r1se\AdvancedNotifications\Exceptions\IncorrectMessageException;
 use Illuminate\Bus\Queueable;
 
-class ExampleLocalizedNotification extends LocalizedNotification
+class ExampleAdvancedNotification extends AdvancedNotification
 {
     use Queueable;
 

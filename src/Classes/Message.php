@@ -1,10 +1,10 @@
 <?php
 
-namespace Aw3r1se\LocalizedNotifications\Classes;
+namespace Aw3r1se\AdvancedNotifications\Classes;
 
-use Aw3r1se\LocalizedNotifications\Enums\Contracts\ContentTypeEnumInterface;
-use Aw3r1se\LocalizedNotifications\Enums\Contracts\LocaleEnumInterface;
-use Aw3r1se\LocalizedNotifications\Models\MessageContent;
+use Aw3r1se\AdvancedNotifications\Enums\Contracts\ContentTypeEnumInterface;
+use Aw3r1se\AdvancedNotifications\Enums\Contracts\LocaleEnumInterface;
+use Aw3r1se\AdvancedNotifications\Models\MessageContent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -66,7 +66,7 @@ abstract class Message
     ): MessageContent {
         return MessageContent::query()
             ->where('name', static::$name)
-            ->where('locale', ($locale ?? config('ln.locale'))->name())
+            ->where('locale', ($locale ?? config('an.locale'))->name())
             ->when($type, function (Builder $builder) use ($type) {
                 $builder->where('type', $type->name());
             })->firstOrFail();

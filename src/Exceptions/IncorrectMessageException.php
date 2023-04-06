@@ -1,6 +1,6 @@
 <?php
 
-namespace Aw3r1se\LocalizedNotifications\Exceptions;
+namespace Aw3r1se\AdvancedNotifications\Exceptions;
 
 use Exception;
 use Throwable;

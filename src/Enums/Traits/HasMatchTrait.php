@@ -1,8 +1,8 @@
 <?php
 
-namespace Aw3r1se\LocalizedNotifications\Enums\Traits;
+namespace Aw3r1se\AdvancedNotifications\Enums\Traits;
 
-use Aw3r1se\LocalizedNotifications\Enums\Contracts\LocaleEnumInterface;
+use Aw3r1se\AdvancedNotifications\Enums\Contracts\LocaleEnumInterface;
 use Illuminate\Support\Arr;
 
 trait HasMatchTrait
@@ -18,7 +18,7 @@ trait HasMatchTrait
             function (LocaleEnumInterface $enum) use ($locale) {
                 return $enum->name() == $locale;
             },
-            config('ln.locale'),
+            config('an.locale'),
         );
     }
 }

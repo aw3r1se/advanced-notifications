@@ -1,10 +1,10 @@
 <?php
 
-namespace Aw3r1se\LocalizedNotifications\Enums;
+namespace Aw3r1se\AdvancedNotifications\Enums;
 
-use Aw3r1se\LocalizedNotifications\Enums\Contracts\LocaleEnumInterface;
-use Aw3r1se\LocalizedNotifications\Enums\Traits\HasMatchTrait;
-use Aw3r1se\LocalizedNotifications\Enums\Traits\HasNameTrait;
+use Aw3r1se\AdvancedNotifications\Enums\Contracts\LocaleEnumInterface;
+use Aw3r1se\AdvancedNotifications\Enums\Traits\HasMatchTrait;
+use Aw3r1se\AdvancedNotifications\Enums\Traits\HasNameTrait;
 
 enum LocaleEnum implements LocaleEnumInterface
 {

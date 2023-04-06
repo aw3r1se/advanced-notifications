@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Notifications\Localized;
+namespace App\Notifications\Advanced;
 
-use Aw3r1se\LocalizedNotifications\Classes\LocalizedNotification;
-use Aw3r1se\LocalizedNotifications\Enums\ContentTypeEnum;
-use Aw3r1se\LocalizedNotifications\Example\ExampleMessage;
-use Aw3r1se\LocalizedNotifications\Exceptions\IncorrectMessageException;
+use Aw3r1se\AdvancedNotifications\Classes\AdvancedNotification;
+use Aw3r1se\AdvancedNotifications\Enums\ContentTypeEnum;
+use Aw3r1se\AdvancedNotifications\Example\ExampleMessage;
+use Aw3r1se\AdvancedNotifications\Exceptions\IncorrectMessageException;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class Test extends LocalizedNotification
+class Test extends AdvancedNotification
 {
     use Queueable;
 

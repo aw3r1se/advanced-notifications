@@ -1,12 +1,12 @@
 <?php
 
-namespace Aw3r1se\LocalizedNotifications\Console\Commands;
+namespace Aw3r1se\AdvancedNotifications\Console\Commands;
 
-use Aw3r1se\LocalizedNotifications\Classes\Variable;
+use Aw3r1se\AdvancedNotifications\Classes\Variable;
 
 class MakeVariable extends BaseCommand
 {
-    protected $signature = 'make:ln-variable {name}';
+    protected $signature = 'make:an-variable {name}';
 
     public function handle()
     {

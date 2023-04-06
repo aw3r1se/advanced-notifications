@@ -1,18 +1,18 @@
 <?php
 
-namespace Aw3r1se\LocalizedNotifications\Classes;
+namespace Aw3r1se\AdvancedNotifications\Classes;
 
-use Aw3r1se\LocalizedNotifications\Enums\Contracts\ContentTypeEnumInterface;
-use Aw3r1se\LocalizedNotifications\Enums\LocaleEnum;
-use Aw3r1se\LocalizedNotifications\Exceptions\IncorrectEntityProvided;
-use Aw3r1se\LocalizedNotifications\Exceptions\IncorrectMessageException;
-use Aw3r1se\LocalizedNotifications\Exceptions\RelationDoesntExists;
-use Aw3r1se\LocalizedNotifications\Models\MessageContent;
+use Aw3r1se\AdvancedNotifications\Enums\Contracts\ContentTypeEnumInterface;
+use Aw3r1se\AdvancedNotifications\Enums\LocaleEnum;
+use Aw3r1se\AdvancedNotifications\Exceptions\IncorrectEntityProvided;
+use Aw3r1se\AdvancedNotifications\Exceptions\IncorrectMessageException;
+use Aw3r1se\AdvancedNotifications\Exceptions\RelationDoesntExists;
+use Aw3r1se\AdvancedNotifications\Models\MessageContent;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notification;
 
-abstract class LocalizedNotification extends Notification
+abstract class AdvancedNotification extends Notification
 {
     protected Message $message;
 
@@ -68,7 +68,7 @@ abstract class LocalizedNotification extends Notification
     /**
      * @param string $variable_class
      * @param mixed $value
-     * @return LocalizedNotification
+     * @return AdvancedNotification
      */
     public function setVariableValue(string $variable_class, mixed $value): static
     {

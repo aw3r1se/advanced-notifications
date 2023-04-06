@@ -1,6 +1,6 @@
 <?php
 
-namespace Aw3r1se\LocalizedNotifications\Enums\Traits;
+namespace Aw3r1se\AdvancedNotifications\Enums\Traits;
 
 trait HasNameTrait
 {

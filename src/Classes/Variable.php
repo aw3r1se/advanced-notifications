@@ -1,9 +1,9 @@
 <?php
 
-namespace Aw3r1se\LocalizedNotifications\Classes;
+namespace Aw3r1se\AdvancedNotifications\Classes;
 
-use Aw3r1se\LocalizedNotifications\Exceptions\IncorrectEntityProvided;
-use Aw3r1se\LocalizedNotifications\Exceptions\RelationDoesntExists;
+use Aw3r1se\AdvancedNotifications\Exceptions\IncorrectEntityProvided;
+use Aw3r1se\AdvancedNotifications\Exceptions\RelationDoesntExists;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 

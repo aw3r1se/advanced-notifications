@@ -1,15 +1,15 @@
 <?php
 
-namespace Aw3r1se\LocalizedNotifications\Console\Commands;
+namespace Aw3r1se\AdvancedNotifications\Console\Commands;
 
-use Aw3r1se\LocalizedNotifications\Classes\LocalizedNotification;
+use Aw3r1se\AdvancedNotifications\Classes\AdvancedNotification;
 
-class MakeLocalizedNotification extends BaseCommand
+class MakeAdvancedNotification extends BaseCommand
 {
-    protected $signature = 'make:ln {name}';
+    protected $signature = 'make:an {name}';
 
     public function handle()
     {
-        $this->make('LocalizedNotification', LocalizedNotification::class);
+        $this->make('AdvancedNotification', AdvancedNotification::class);
     }
 }

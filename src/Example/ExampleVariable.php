@@ -1,9 +1,9 @@
 <?php
 
-namespace Aw3r1se\LocalizedNotifications\Example;
+namespace Aw3r1se\AdvancedNotifications\Example;
 
 use App\Models\User;
-use Aw3r1se\LocalizedNotifications\Classes\Variable;
+use Aw3r1se\AdvancedNotifications\Classes\Variable;
 
 class ExampleVariable extends Variable
 {
