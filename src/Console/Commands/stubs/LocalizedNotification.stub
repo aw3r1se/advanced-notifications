@@ -34,7 +34,9 @@ class Test extends LocalizedNotification
 
     public function toMail(object $notifiable): MailMessage
     {
+        $text = $this->getByType(ContentTypeEnum::TEXT);
+
         return (new MailMessage())
-            ->line($this->getByType(ContentTypeEnum::TEXT));
+            ->line($text);
     }
 }

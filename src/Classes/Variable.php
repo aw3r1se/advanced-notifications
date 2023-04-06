@@ -52,6 +52,17 @@ abstract class Variable
     }
 
     /**
+     * @param string $value
+     * @return $this
+     */
+    public function setValue(string $value): static
+    {
+        $this->value = $value;
+
+        return $this;
+    }
+
+    /**
      * @param Model $entity
      * @return $this
      * @throws IncorrectEntityProvided
@@ -59,6 +70,10 @@ abstract class Variable
      */
     public function defineValue(Model $entity): static
     {
+        if ($this->value) {
+            return $this;
+        }
+
         if (!($entity instanceof static::$model)) {
             throw new IncorrectEntityProvided();
         }

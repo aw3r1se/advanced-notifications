@@ -6,6 +6,7 @@ use Aw3r1se\LocalizedNotifications\Enums\Contracts\ContentTypeEnumInterface;
 use Aw3r1se\LocalizedNotifications\Enums\LocaleEnum;
 use Aw3r1se\LocalizedNotifications\Exceptions\IncorrectEntityProvided;
 use Aw3r1se\LocalizedNotifications\Exceptions\IncorrectMessageException;
+use Aw3r1se\LocalizedNotifications\Exceptions\RelationDoesntExists;
 use Aw3r1se\LocalizedNotifications\Models\MessageContent;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
@@ -50,6 +51,7 @@ abstract class LocalizedNotification extends Notification
      * @param Model $model
      * @return $this
      * @throws IncorrectEntityProvided
+     * @throws RelationDoesntExists
      */
     public function add(Model $model): static
     {
@@ -57,6 +59,23 @@ abstract class LocalizedNotification extends Notification
         foreach ($this->message->getVariables() as $variable) {
             if ($model instanceof ($variable::getModel())) {
                 $variable->defineValue($model);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param string $variable_class
+     * @param mixed $value
+     * @return LocalizedNotification
+     */
+    public function setVariableValue(string $variable_class, mixed $value): static
+    {
+        $variables = $this->message->getVariables();
+        foreach ($variables as $variable) {
+            if (is_a($variable, $variable_class)) {
+                $variable->setValue($value);
             }
         }
 
