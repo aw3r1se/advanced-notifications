@@ -9,7 +9,7 @@ use Aw3r1se\AdvancedNotifications\Exceptions\IncorrectMessageException;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class Test extends AdvancedNotification
+class AdvancedNotificationStub extends AdvancedNotification
 {
     use Queueable;
 
