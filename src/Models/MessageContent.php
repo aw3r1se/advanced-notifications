@@ -66,7 +66,7 @@ class MessageContent extends Model
         foreach ($variables as $variable) {
             $name = $variable::getName();
             $this->content = preg_replace(
-                "#\\$name#u",
+                '#' . $name . '#',
                 $variable->getValue(),
                 $this->content,
             );
