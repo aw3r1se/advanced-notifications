@@ -82,6 +82,7 @@ abstract class Message
         ?ContentTypeEnumInterface $filter_by_type = null,
     ): Collection {
         return MessageContent::query()
+            ->where('name', static::getName())
             ->when($filter_by_locale, function (Builder $builder) use ($filter_by_locale) {
                 $builder->where('locale', $filter_by_locale->name());
             })
