@@ -35,7 +35,7 @@ abstract class Message
     /**
      * @return array<Variable>
      */
-    public function getVariables(): array
+    public static function getVariables(): array
     {
         return static::$variables;
     }
@@ -46,7 +46,7 @@ abstract class Message
      */
     public function translate(LocaleEnumInterface $locale): Collection
     {
-        $variables = $this->getVariables();
+        $variables = static::getVariables();
         $contents = static::getAllContents($locale);
         foreach ($contents as $content) {
             $content->replaceVariables($variables);
