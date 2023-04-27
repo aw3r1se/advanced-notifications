@@ -84,9 +84,9 @@ abstract class AdvancedNotification extends Notification
 
     /**
      * @param ContentTypeEnumInterface $type
-     * @return string
+     * @return string|null
      */
-    public function getByType(ContentTypeEnumInterface $type): string
+    public function getByType(ContentTypeEnumInterface $type): ?string
     {
         if (is_null($this->contents)) {
             $this->translate();
@@ -94,7 +94,7 @@ abstract class AdvancedNotification extends Notification
 
         return $this->contents
             ->firstWhere('type', $type->name())
-            ->content;
+            ?->content;
     }
 
     /**
